@@ -9,12 +9,11 @@ import (
 var Logger zerolog.Logger
 
 func Init() {
+	Logger = zerolog.New(os.Stdout)
+	zerolog.SetGlobalLevel(zerolog.DebugLevel)
 	if config.Get().Logger.ErrorLvl {
 		zerolog.SetGlobalLevel(zerolog.ErrorLevel)
-	} else {
-		zerolog.SetGlobalLevel(zerolog.DebugLevel)
 	}
-	Logger = zerolog.New(os.Stderr)
 }
 
 func Get() *zerolog.Logger {
