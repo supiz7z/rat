@@ -11,5 +11,5 @@ func init() {
 }
 
 func main() {
-	logger.Get().Info().Timestamp().Str("application", config.Get().AppInfo.AppName).Msg("app started")
+
 }
